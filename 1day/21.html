@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>투표가능여부확인</title>
+</head>
+<body>
+    <h1>투표 가능한 나이 확인하기</h1>
+    <input type="text" id="age" placeholder="나이를 입력하세요">
+    <button onclick="vote()">확인</button>
+    <hr>
+    <p id="result"></p>
+    <script>
+        let age = document.getElementById('age').value;
+        const standard = 18;
+
+        function vote(){
+            console.log(age);
+            var result = age >= standard ?
+            
+            document.getElementById('result').innerHTML 
+            = `당신은  ${result}  합니다!`
+        }
+/*         var basic = 18;
+        var result = age >= basic ?
+        document.write(result);
+ */        
+    </script>
+</body>
+</html>

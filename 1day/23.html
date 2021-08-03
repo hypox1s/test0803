@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용돈 계산기 ->58p</title>
+</head>
+<body>
+    용돈 총액 : <input type = "text" id = "all" value = "10000">원
+    <hr>
+    교통비 : <input type="text" id="pr1">원 <br>
+    식비 :  <input type="text" id="pr2">원 <br>
+    기타 : <input type="text" id="pr3">원 <br>
+    <hr>
+    <button onclick="price()">계산하기</button>
+    <p id="result"></p>
+    <script>
+/*         const all = 10000;
+        let pr1 = prompt;
+        let pr2 = prompt;
+        let pr3 = prompt;
+        let price = all - pr1 + pr2 + pr3;
+        price > all ?
+        document.getElementById('price').innerHTML
+        =`` */
+        // 교통비, 식비, 기타 -> 지출총액 / 월 용돈은 만원
+        // 1만원 초과 -> ---원 초과 되었으니 용돈관리를 잘 못하셨습니다.
+        // ---원 세이브 되었으니 용돈관리를 잘 하였습니다.
+        function price(){
+            let all = document.getElementById("all").value;
+            let pr1 = document.getElementById("pr1").value;
+            let pr2 = document.getElementById("pr2").value;
+            let pr3 = document.getElementById("pr3").value;
+            let total = Number(pr1) + Number(pr2) + Number(pr3);
+            console.log(typeof total,total);
+
+            let result = all > total ? (all-total)+"원 세이브 되었으니 용돈관리를 잘 하였습니다."
+            : (total-all)+ "원 초과 되었으니 용돈관리를 잘 못하셨습니다.";
+            document.getElementById('result').innerHTML = result;
+        }
+
+    </script>
+</body>
+</html>
